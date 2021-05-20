@@ -15,20 +15,26 @@
   for (i=0;i<numbers;i++){
     array[i] = +prompt("Nhập số thứ " +i);
   }
-  let V=+prompt("Nhập số cần tìm :");
+  let V = +prompt("Nhập số cần tìm :");
   let index;
-  for (j=0;j<array.length;j++){
-    if (array[j]==V) {
-      index=j;
+  let check = true;
+  for (j = 0; j < array.length; j++) {
+    if (array[j] == V) {
+      index = j;
+      check=true;break;
+      //alert(V + "thuoc mang da nhap o vi tri" + index);break;
+    } else {
+      check=false;
     }
+    // index = V + " khong thuoc mang da nhap"
+    // alert(index)
   }
-  index = V + " khong thuoc mang da nhap"
-  alert(index)
-  if (index>=0&&index<array.length) {
-    for (x=index;x<array.length;x++){
-      array[x]=array[x+1];
+if (check==true){alert("co o vi tri "+index)} else {alert("ko co")}
+  if (index >= 0 && index < array.length) {
+    for (x = index; x < array.length; x++) {
+      array[x] = array[x + 1];
     }
-    array[x-1]=0
+    array[x - 1] = ""
   }
   document.write(array)
 </script>
